@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Check secrets
 on:
   push:
     branches:
@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Check secrets
         run: |
-          if [ -z "${{ secrets.MY_GITHUB_TOKEN }}" ]; then  
+          if [ -z "${{ secrets.TOKEN }}" ]; then  
             echo "YOUR_SECRET is not set!"  
           else  
-            echo "YOUR_SECRET is set. ${{secrets.MY_GITHUB_TOKEN}}" 
+            echo "YOUR_SECRET is set. ${{secrets.TOKEN}}" 
           fi
